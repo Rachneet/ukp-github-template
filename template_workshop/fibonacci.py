@@ -1,8 +1,9 @@
 class Fibonacci:
     def __init__(self):
-        self.mem = {}
+        pass
 
     def fib(self, n: int) -> int:
-        ##### YOUR CODE HERE #####
-        return 0
-        ##########################
+        if n <= 1:
+            return n
+        else:
+            return self.fib(n-1) + self.fib(n-2)

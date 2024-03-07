@@ -7,9 +7,10 @@ Be creative! do whatever you want!
 - Start a web application
 - Import things from your .base module
 """
-##### YOUR CODE HERE #####
 
-##########################
+from .fibonacci import Fibonacci
+import argparse
+
 
 def main():  # pragma: no cover
     """
@@ -27,6 +28,12 @@ def main():  # pragma: no cover
         * List all available tasks
         * Run an application (Flask, FastAPI, Django, etc.)
     """
-    ##### YOUR CODE HERE #####
-    print("This will do something")
-    ##########################
+    fib = Fibonacci()
+    print("Calculating Fibonacci number...")
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--n", type=int, default=10)
+
+    args = parser.parse_args()
+    final = fib.fib(args.n)
+    print(f"Fibonacci number is: {final}")
